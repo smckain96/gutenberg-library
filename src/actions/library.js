@@ -1,0 +1,31 @@
+import axios from 'axios';
+
+export const getLibrary = () => {
+  return {
+    type: 'GET_LIBRARY',
+    payload: axios.get(`http://localhost:3000/library`)
+
+  }
+}
+
+export const addToLibrary = () => {
+  return {
+    type: 'ADD_TO_LIBRARY',
+    payload: axios.post(`http://localhost:3000/library`)
+
+  }
+}
+
+export const singleLibraryEntry = (id) => {
+  return {
+    type: 'SINGLE_LIBRARY_ENTRY',
+    payload: axios.get(`http://localhost:3000/library/${id}`)
+  }
+}
+
+export const deleteFromLibrary= (id) => {
+  return {
+    type: 'DELETE_FROM_LIBRARY',
+    payload: axios.post(`http://localhost:3000/library/${id}`)
+  }
+}

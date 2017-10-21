@@ -6,13 +6,19 @@ import { getLibrary } from '../actions/library';
 
 
 
-class App extends Component {
+class Library extends Component {
   componentDidMount() {
     getLibrary()
-    console.log('state', this.state, 'props', this.props)
+    console.log('state', this.state)
+    console.log('props', this.props)
   }
 
   render() {
+    // let libraryList = this.state.library.map((entry) => {
+    //   return (
+    //     <div className="library-entry" id={entry.id}></div>
+    //   )
+    // })
     return (
       <div className="Library">
 
@@ -29,7 +35,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        actions: bindActionCreators(getLibrary, dispatch)
+      actions: bindActionCreators(getLibrary, dispatch)
     }
 }
-export default connect(null, mapDispatchToProps)(App);
+
+export default connect(mapDispatchToProps, mapStateToProps)(Library);

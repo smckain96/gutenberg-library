@@ -4,15 +4,19 @@ export const getLibrary = () => {
   return {
     type: 'GET_LIBRARY',
     payload: axios.get(`http://localhost:3000/library`)
-
+    .then(function(data) {
+      console.log('data', data.data)
+    })
   }
 }
 
-export const addToLibrary = () => {
+export const addToLibrary = (entry) => {
   return {
     type: 'ADD_TO_LIBRARY',
-    payload: axios.post(`http://localhost:3000/library`)
-
+    payload: axios.post(`http://localhost:3000/library/`,
+      {
+        entry: entry
+      })
   }
 }
 

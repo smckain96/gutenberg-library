@@ -4,9 +4,6 @@ export const getLibrary = () => {
   return {
     type: 'GET_LIBRARY',
     payload: axios.get(`http://localhost:3000/library`)
-    .then(function(data) {
-      console.log('data', data.data)
-    })
   }
 }
 

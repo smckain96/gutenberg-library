@@ -8,9 +8,13 @@ import { getLibrary } from '../actions/library';
 
 
 class Library extends Component {
+  getLibrary() {
+    this.props.getLibrary()
+  }
+
   componentWillMount() {
-    let getLibrary = this.props.getLibrary()
-    getLibrary
+    this.getLibrary()
+    console.log(this.props)
   }
 
   componentDidMount() {

@@ -7,9 +7,14 @@ import { getLibrary } from '../actions/library';
 
 
 class Library extends Component {
-  componentDidMount() {
+  componentWillMount() {
     this.props.getLibrary()
-    console.log(this.state)
+    console.log('this.props', this.props)
+    console.log('this.state', this.state)
+  }
+
+  componentDidMount() {
+    console.log('props', this.props)
   }
 
   render() {

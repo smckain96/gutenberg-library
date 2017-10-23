@@ -3,26 +3,28 @@ import '../App.css';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { getLibrary } from '../actions/library';
+// import { LibraryEntry } from './LibraryEntry';
 
 
 
 class Library extends Component {
   componentWillMount() {
-    this.props.getLibrary()
-    console.log('this.props', this.props)
-    console.log('this.state', this.state)
+    let getLibrary = this.props.getLibrary()
+    getLibrary
   }
 
   componentDidMount() {
-    console.log('props', this.props)
+    console.log(this.state)
   }
 
   render() {
+    //
     // let libraryList = this.state.library.map((entry) => {
     //   return (
     //     <LibraryEntry id={entry.id} />
     //   )
-    // })
+    // });
+
     return (
       <div className="Library">
 

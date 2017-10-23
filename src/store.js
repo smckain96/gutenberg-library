@@ -3,7 +3,7 @@ import rootReducer from  './reducers';
 import logger from 'redux-logger';
 import promises from 'redux-promise-middleware';
 
-export default(initialState) => {
+export default() => {
     return createStore(
       rootReducer,
       applyMiddleware(logger, promises())
